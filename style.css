@@ -1,4 +1,4 @@
-*, *::after, *::before {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -6,364 +6,359 @@
 
 html {
     font-size: 10px;
-    font-family: "Rubik", system-ui;
-}
-
-img {
-    display: block;
+    line-height: 1.6;
 }
 
 body {
+    font-family: "Rubik", sans-serif;
     background-color: hsl(0deg 0% 98.04%);
-    padding: 0px 40px;
-    overflow: hidden;
-}
-
-main {
     min-height: 100vh;
+    padding: 5rem 3rem;
     display: grid;
+    grid-template-columns: 1fr 1.25fr;
     align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 7vw;
-    position: relative;
-    padding: 40px 0px;
+    justify-content: center;
+    gap: 15rem;
+    overflow-x: hidden;
 }
 
-/* First Section */
-
-main section:first-child {
-    width: 32rem;
-    background-color: white;
-    border-radius: 2rem;
-    padding: 1.2rem;
-    justify-self: flex-end;
-    box-shadow: 7px 7px 10px #DDD;
-    margin-right: 8rem;
-    position: relative;
-}
-
-main section:first-child::before {
+body::after {
     content: "";
-    position: absolute;
+    background-image: linear-gradient(to bottom, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    height: 63rem;
     width: 50rem;
-    height: 60rem;
-    background: linear-gradient(180deg, hsl(293, 100%, 63%) 0%, hsl(264, 100%, 61%) 100%);
-    top: -60px;
-    right: 15vw;
-    border-radius: 0 0 25rem 25rem;
+    position: absolute;
+    top: 0;
+    left: -12.5rem;
+    border-bottom-left-radius: 25rem;
+    border-bottom-right-radius: 25rem;
+    z-index: -1;
+}
+
+body::before {
+    content: "";
+    background-image: linear-gradient(to top, hsl(293deg 100% 63% / 3%), hsl(264deg 100% 61% / 3%));
+    height: 63rem;
+    width: 50rem;
+    position: absolute;
+    bottom: 0;
+    right: -12.5rem;
+    border-top-left-radius: 25rem;
+    border-top-right-radius: 25rem;
     z-index: -1;
 }
 
 
-main section:first-child .phone {
-    background-color: hsl(270, 20%, 96%);
-    display: flex;
-    flex-direction: column;
+/* First Section */
+.phone {
+    width: 30rem;
+    background-color: white;
+    padding: 1.2rem;
+    margin-left: auto;
     border-radius: 2rem;
-    position: relative;
+    box-shadow: 10px 20px 30px #DDD;
 }
 
-main section:first-child .phone .header {
-    display: flex;
-    gap: 0.5rem;
-    background-image: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+.phone .phone-cont {
+    background-color: hsl(270, 20%, 96%);
+    border-radius: 2rem;
+}
+
+.phone .phone-cont .header {
     color: white;
-    padding: 35px 0px 15px 25px;
+    background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1.2;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    padding: 3.5rem 2.5rem 1.5rem;
     position: relative;
 }
 
-main section:first-child .phone .header::after {
+.phone .phone-cont .header .arrow {
+    height: 2.5rem;
+    width: 1.2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.phone .phone-cont .header .arrow::after {
     content: "";
     background-color: white;
-    height: 3.2rem;
-    width: 50%;
+    width: 75%;
+    height: 0.2rem;
+    border-radius: 0.1rem;
     position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(0.15rem) rotate(45deg);
+}
+
+.phone .phone-cont .header .arrow::before {
+    content: "";
+    background-color: white;
+    width: 75%;
+    height: 0.2rem;
+    border-radius: 0.1rem;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    transform: translateY(-0.15rem) rotate(-45deg);
+}
+
+.phone .phone-cont .header img {
+    width: 3.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid white;
+}
+
+.phone .phone-cont .header .text h2 {
+    font-weight: 500;
+}
+
+.phone .phone-cont .header .text p {
+    font-size: 1.1rem;
+    color: hsl(276, 100%, 81%);
+}
+
+.phone .phone-cont .header .settings{
+    height: 1.5rem;
+    width: 1rem;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+}
+
+.phone .phone-cont .header .settings span {
+    height: 0.2rem;
+    width: 0.2rem;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.phone .phone-cont .header::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 50%;
+    height: 3.2rem;
     top: -1.2rem;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 1.5rem;
+    border-radius: 1.3rem;
 }
 
-
-main section:first-child .phone .header .arrow {
-    width: 1rem;
-    position: relative;
-    cursor: pointer;
-}
-
-main section:first-child .phone .header .arrow::after {
-    content: "";
-    height: 0.8rem;
-    width: 0.2rem;
-    background-color: white;
-    border-radius: 0.1rem;
-    position: absolute;
-    top: calc(50% - 0.62rem);
-    transform: rotate(45deg);
-}
-
-main section:first-child .phone .header .arrow::before {
-    content: "";
-    height: 0.8rem;
-    width: 0.2rem;
-    background-color: white;
-    border-radius: 0.1rem;
-    position: absolute;
-    bottom: calc(50% - 0.62rem);
-    transform: rotate(-45deg);
-}
-
-main section:first-child .phone .header img {
-    width: 3.2rem;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-main section:first-child .phone .header .text {
-    transform: translateX(10px);
-}
-
-main section:first-child .phone .header h2 {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-bottom: 2px;
-}
-
-main section:first-child .phone .header p {
-    color: hsl(276, 100%, 81%)
-}
-
-
-main section:first-child .phone .header .settings {
-    width: 0.5rem;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-    position: absolute;
-    right: 20px;
-    cursor: pointer;
-}
-
-main section:first-child .phone .header .settings .dot {
-    width: 0.2rem;
-    height: 0.2rem;
-    background-color: white;
-    border-radius: 50%;
-}
-
-/* Content Section */
-main section:first-child .content {
-    padding: 10px;
+.phone .phone-cont .chat {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
-main section:first-child .content > p.send {
-    color: hsl(276, 55%, 52%);
+.phone .phone-cont .chat .sent {
     background-color: hsl(272deg 40.54% 92.75%);
-    max-width: 50%;
-    padding: 10px;
     font-size: 0.9rem;
-    border-radius: 1.2rem;
-    border-bottom-left-radius: 0.4rem;
+    color: hsl(276, 55%, 52%);
+    max-width: 60%;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
-main section:first-child .content .pictures {
-    display: flex;
-    gap: 10px;
-    height: 45px;
-    align-self: flex-end;
-}
-
-main section:first-child .content .recieve {
-    align-self: flex-end;
+.phone .phone-cont .chat .recieve {
     background-color: white;
-    max-width: 50%;
-    padding: 10px;
     font-size: 0.9rem;
-    border-radius: 1.2rem;
-    border-bottom-right-radius: 0.4rem;
-    box-shadow: 0px 2px 5px #DDD;
+    max-width: 60%;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0px 5px 10px #DDD;
 }
 
-main section:first-child .content .pictures img {
+.phone .phone-cont .chat .recieve {
+    align-self: flex-end;
+}
+
+.phone .phone-cont .chat .pictures {
+    align-self: flex-end;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.phone .phone-cont .chat .pictures img {
+    width: 4rem;
     border-radius: 1rem;
-    max-height: 100%;
 }
 
-main section:first-child .content .special {
+.phone .phone-cont .chat form {
+    width: 100%;
+    position: relative;
+}
+
+.phone .phone-cont .chat .special {
+    background-image: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    color: white;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
+    position: relative;
+}
+
+.phone .phone-cont .chat .special input[type="radio"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+}
+
+.phone .phone-cont .chat .special .checkmark {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid hsl(289, 100%, 72%);
+    position: absolute;
+    cursor: pointer;
+}
+
+.phone .phone-cont .chat .special .checkmark::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 50%;
+    left: 6px;
+    transform: translate(-50%, -50%);
+    background-color: #EEE;
+    z-index: 999;
+    opacity: 0;
+}
+
+.phone .phone-cont .chat .special input[type="radio"]:checked ~ .checkmark {
+    background-color: hsl(289, 100%, 72%);
+    padding: 1px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+
+.phone .phone-cont .chat .special input[type="radio"]:checked ~ .checkmark::after {
+    opacity: 1;
+}
+
+.phone .phone-cont .chat .special label {
+    color: hsl(300deg 100% 89.02%);
     width: 70%;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-image: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
-    color: white;
-    font-size: 1rem;
-    border-radius: 1.2rem;
-    border-bottom-left-radius: 0.4rem;
-    position: relative;
-}
-
-main section:first-child .content .special .circle {
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 50%;
-    border: 2px solid hsl(289, 100%, 72%);
+    gap: 1rem;
     cursor: pointer;
 }
 
-main section:first-child .content .special .price {
-    font-size: 1.2rem;
-    font-weight: 700;
-    position: absolute;
-    right: 20px;
+.phone .phone-cont .chat .special h2 {
+    margin-left: auto;
+    margin-right: 1rem;
+    font-size: 1.3rem;
 }
 
-main section:first-child .content input[type="text"] {
-    width: 100%;
-    height: 4rem;
-    font-size: 1rem;
-    outline: none;
-    padding: 0px 20px;
-    border-radius: 2rem;
+.phone .phone-cont .chat form {
+    margin-top: 1rem;
+}
+
+.phone .phone-cont .chat form input[type="text"] {
     border: none;
-    margin-top: 0.8rem;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
 }
 
-main section:first-child .content input[type="text"]::placeholder {
-    color: hsl(0deg 0% 82.75%);
+.phone .phone-cont .chat form input[type="text"]::placeholder {
+    color: hsl(206, 6%, 79%);
+    font-size: 1rem;
 }
 
-main section:first-child .content .click {
-    width: 3rem;
-    height: 3rem;
+.phone .phone-cont .chat form input[type="submit"] {
+    border: none;
+    outline: none;
+    background-color: hsl(271, 36%, 24%);
+    color: white;
+    font-weight: 900;
+    height: 2.8rem;
+    width: 2.8rem;
     border-radius: 50%;
     position: absolute;
-    background-color: hsl(271, 36%, 24%);
-    bottom: 3rem;
-    right: 1.5rem;
-    transform: translateY(50%);
+    top: calc(50% - 1.4rem);
+    right: 5px;
     cursor: pointer;
 }
-
-main section:first-child .content .click::after {
-    content: "";
-    height: 0.8rem;
-    width: 0.2rem;
-    background-color: white;
-    border-radius: 0.1rem;
-    position: absolute;
-    top: calc(50% - 0.62rem);
-    left: calc(50% - 0.05rem);
-    transform: rotate(-45deg);
-}
-
-main section:first-child .content .click::before {
-    content: "";
-    height: 0.8rem;
-    width: 0.2rem;
-    background-color: white;
-    border-radius: 0.1rem;
-    position: absolute;
-    bottom: calc(50% - 0.62rem);
-    left: calc(50% - 0.05rem);
-    transform: rotate(45deg);
-}
-
-
 
 /* Second Section */
-main section:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
+.content {
+    max-width: 42rem;
 }
 
-main section:last-child::after {
-    content: "";
-    position: absolute;
-    width: 50rem;
-    height: 60rem;
-    background: linear-gradient(0deg, hsla(293, 100%, 63%, 0.05) 0%, hsla(264, 100%, 61%, 0.05) 100%);
-    bottom: -280px;
-    left: 20vw;
-    border-radius: 25rem 25rem 0 0;
-}
-
-main section:last-child h1 {
-    font-size: 3.5rem;
+.content h1 {
+    font-size: 3.2rem;
     font-weight: 500;
     color: hsl(271, 36%, 24%);
+    margin-bottom: 1.3rem;
 }
 
-main section:last-child p {
-    font-size: 1.4rem;
-    max-width: 40rem;
+.content p {
+    font-size: 1.5rem;
     color: hsl(270, 7%, 64%);
-    line-height: 1.5;
 }
 
-
-/* Media Queries */
-@media (max-width: 50rem) {
-    body {
-        overflow-y: visible;
-        padding: 3rem;
-    }
-    main {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(2, auto);
-        gap: 8rem;
-    }
-
-    main section:first-child {
-        justify-self: flex-start;
-    }
-
-    main section:first-child::before {
-        top: -70px;
-    }
-
-    main section:last-child {
-        justify-self: flex-end;
-    }
-
-    main section:last-child::after {
-        bottom: -7rem;
-        height: 35rem;
-        z-index: -1;
-    }
-
-    main section:last-child p {
-        width: 30rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 28.125rem) {
-    body {
-        max-height: 1010px;
-    }
-    main {
-        justify-content: center;
+@media (max-width: 62.5rem) {
+    body::after, body::before {
+        width: 35rem;
+        height: 57rem;
     }
     
-    main section:first-child {
-        width: 30rem;
-        margin: 0;
+}
+
+@media (max-width: 43.75rem) {
+    body {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+    }
+
+    body::before {
+        bottom: -25vh;
+        height: 40rem;
+    }
+
+    .phone {
+        margin-right: auto;
+    }
+
+    .content {
+        margin-left: auto;
     }
 }
 
 
+@media (max-width: 30rem) {
+    body::before {
+        bottom: -40vh;
+    }
+}
