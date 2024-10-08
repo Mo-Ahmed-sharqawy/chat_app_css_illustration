@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Chat app CSS illustration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Chat App CSS Illustration</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="images/favicon-32x32.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,53 +11,57 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <main>
-            <section>
-                <article class="phone">
-                    <article class="header">
-                        <div class="arrow"></div>
-                        <img src="images/avatar.jpg" alt="">
-                        <div class="text">
-                            <h2>Samuel Green</h2>
-                            <p>Availabe For Walk</p>
-                        </div>
-                        <div class="settings">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </article>
-                    <div class="content">
-                        <p class="send">That sounds great. I'd be happy with that.</p>
-                        <p class="send">Could you send over some pictures of your dog?</p>
-                        <div class="pictures">
-                            <img src="images/dog-image-1.jpg" alt="Dog Image">
-                            <img src="images/dog-image-2.jpg" alt="Dog Image">
-                            <img src="images/dog-image-3.jpg" alt="Dog Image">
-                        </div>
-                        <p class="recieve">Here are a few pictures. She's a happy girl!</p>
-                        <p class="recieve">Can you make it?</p>
-                        <p class="send">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
-                        <div class="special">
-                            <div class="circle"></div>
-                            <p>30 minute walk</p>
-                            <div class="price">$29</div>
-                        </div>
-                        <div class="special">
-                            <div class="circle"></div>
-                            <p>1 hour walk</p>
-                            <div class="price">$49</div>
-                        </div>
-                        <input type="text" placeholder="Type a message...">
-                        <div class="click"></div>
+        <div class="phone">
+            <div class="phone-cont">
+                <div class="header">
+                    <div class="arrow"></div>
+                    <img src="images/avatar.jpg" alt="Profile Image">
+                    <div class="text">
+                        <h2>Samuel Green</h2>
+                        <p>Available to Work</p>
                     </div>
-                </article>
-            </section>
+                    <div class="settings">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="sent">That sounds great. I'd be happy with that.</div>
+                    <div class="sent">Could you send over some pictures of your dog, please?</div>
+                    <div class="pictures">
+                        <img src="images/dog-image-1.jpg" alt="Dog Image">
+                        <img src="images/dog-image-2.jpg" alt="Dog Image">
+                        <img src="images/dog-image-3.jpg" alt="Dog Image">
+                    </div>
+                    <div class="recieve">Here are a few pictures. She's a happy girl!</div>
+                    <div class="recieve">Can you make it?</div>
+                    <div class="sent">She looks so happy! The time we discussed works. How long shall I take her out for?</div>
+                    <div class="special">
+                        <label for="less">
+                            <input type="radio" name="check" id="less">
+                            <span class="checkmark"></span>
+                            30 minutes walk</label>
+                        <h2>$29</h2>
+                    </div>
+                    <div class="special">
+                        <label for="more">
+                            <input type="radio" name="check" id="more">
+                            <span class="checkmark"></span>
+                            1 hour walk</label>
+                        <h2>$29</h2>
+                    </div>
+                    <form>
+                        <input type="text" placeholder="Type a message...">
+                        <input type="submit" value=">">
+                    </form>
+                </div>
+            </div>
+        </div>
 
-            <section>
-                <h1>Simple booking</h1>
-                <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
-            </section>
-        </main>
+        <div class="content">
+            <h1>Simple booking</h1>
+            <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+        </div>
     </body>
 </html>
